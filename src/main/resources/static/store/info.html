@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>餐厅信息管理</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+
+<style>
+  .addressTable a{
+    font-size:30px
+  }
+</style>
+
+<body onload="bodyload();">
+
+
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend onclick="location.reload();">餐厅信息管理</legend>
+  </fieldset>
+
+  <div style="padding:0px 60px 0px 60px;font-size:20px">
+    <blockquote class="layui-elem-quote" id="account">
+      账号：
+    </blockquote>
+    <br>
+
+
+    <div class="layui-collapse" lay-accordion>
+      <button id="name1" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe642;</i></button>
+      <button id="name2" class="layui-btn layui-btn-primary layui-btn-sm"><i class="layui-icon">&#xe62f;</i></button>
+
+
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">餐厅名称</h2>
+        <div class="layui-colla-content">
+          <div class="layui-input-inline">
+            <input id="name" class="layui-input" type="tel" autocomplete="off" disabled="true">
+          </div>
+        </div>
+      </div>
+
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">餐厅类型</h2>
+        <div class="layui-colla-content">
+          <div class="layui-input-inline">
+            <input id="type" class="layui-input" type="tel" autocomplete="off" disabled="true">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">餐厅地址</h2>
+        <div class="layui-colla-content">
+
+          <!--该区域为送餐地址表信息-->
+          <div class='layui-collapse' id = "addTable">
+
+
+            <div class='layui-colla-item addressTable'>
+              <h2 class='layui-colla-title'>
+                <p id='add'>地址信息加载中……</p>
+              </h2>
+              <div class='layui-colla-content'>
+                <a onclick='deleteAdd(this)' class='layui-icon layui-icon-delete'></a>
+              </div>
+            </div>
+
+
+            <div class="layui-colla-item addressTable" display="none">
+              <h2 class="layui-colla-title">更改地址：</h2>
+              <div class="layui-colla-content" style="margin:0px;padding:0px;">
+                <!--百度地图-->
+                <iframe src="../map/index.html" id="ifmMap" width="100%" height="600px" frameborder="0"></iframe>
+
+
+                <!--
+                <div class="layui-input-inline">
+                  <input id="newAddress" class="layui-input" autocomplete="off">
+                </div>
+                <a id="addAddress" class="layui-icon layui-icon-add-circle"></a>
+                -->
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+
+
+<script src="../layui/layui.all.js"></script>
+<script src="./js/info.js"></script>
+
+</html>

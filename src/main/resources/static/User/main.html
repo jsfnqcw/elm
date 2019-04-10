@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>NJU,ELM?</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body style="height: 100vh;">
+
+  <ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a style="font-size:24px">ELM?</a></li>
+    <li class="layui-nav-item"><a style="font-size:18px" id='buy'>外卖选购</a></li>
+    <li class="layui-nav-item"><a style="font-size:18px" id='search'>订单查询</a></li>
+    <li class="layui-nav-item" style="float:right">
+      <a style="font-size:18px">个人中心</a>
+      <dl class="layui-nav-child"> <!-- 二级菜单 -->
+        <dd><a id="user">username</a></dd>
+      </dl>
+    </li>
+  </ul>
+
+  <div class="layui-tab layui-tab-brief" lay-filter="tab" style="height: calc( 100% - 60px );margin:0px;">
+    <ul class="layui-tab-title" style="display:none;">
+      <li class="layui-this" lay-id="buy">外卖选购</li>
+      <li lay-id="search">订单查询</li>
+      <li lay-id="user">个人中心</li>
+    </ul>
+
+
+    <div class="layui-tab-content" style="height: 100%;padding:0px">
+      <div class="layui-tab-item layui-show" style="height:100%">
+        <iframe src="./buy.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+      <div class="layui-tab-item" style="height:100%" >
+        <iframe src="./search.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+      <div class="layui-tab-item" style="height:100%">
+        <iframe src="./user.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script src="../layui/layui.all.js"></script>
+<script src="./js/main.js"></script>
+</html>

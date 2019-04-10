@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>NJU,ELM?</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body style="height: 100vh;">
+
+  <ul class="layui-nav" lay-filter="">
+    <li class="layui-nav-item"><a style="font-size:24px">ELM?</a></li>
+    <li class="layui-nav-item"><a style="font-size:18px" id='buy'>餐厅审批</a></li>
+    <li class="layui-nav-item"><a style="font-size:18px" id='search'>金额结算</a></li>
+    <li class="layui-nav-item" style="float:right">
+      <a style="font-size:18px" id='user'>统计图表</a>
+
+    </li>
+  </ul>
+
+  <div class="layui-tab layui-tab-brief" lay-filter="tab" style="height: calc( 100% - 60px );margin:0px;">
+    <ul class="layui-tab-title" style="display:none;">
+      <li class="layui-this" lay-id="buy">餐厅审批</li>
+      <li lay-id="search">金额结算</li>
+      <li lay-id="user">统计图表</li>
+    </ul>
+
+
+    <div class="layui-tab-content" style="height: 100%;padding:0px">
+      <div class="layui-tab-item layui-show" style="height:100%">
+        <iframe src="./exm.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+      <div class="layui-tab-item" style="height:100%" >
+        <iframe src="./cal.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+      <div class="layui-tab-item" style="height:100%">
+        <iframe src="./chart.html" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script src="../layui/layui.all.js"></script>
+<script src="./js/main.js"></script>
+</html>

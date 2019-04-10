@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>菜品发布</title>
+  <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+
+<style media="screen">
+  .card {
+    margin: 10px;
+    width: 200px;
+  }
+
+  .card button {
+    margin: 6px;
+    float: right;
+  }
+
+  #con {
+    margin: 0px 60px 0px 60px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+</style>
+
+<body onload="bodyload();">
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend>菜品发布</legend>
+  </fieldset>
+
+
+
+  <div style="padding:0px 60px 0px 60px;font-size:16px;text-align:center">
+    <div class="layui-collapse" lay-accordion>
+      <div class="layui-colla-item">
+        <h2 class="layui-colla-title">添加新菜品</h2>
+        <div class="layui-colla-content">
+          <form class="layui-form" action="/store/addGoods"  method="post">
+            <div class="layui-form-item">
+              <label class="layui-form-label">菜品名称</label>
+              <div class="layui-input-block">
+                <input name="name" class="layui-input" type="text" required autocomplete="off" lay-verify="required">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">菜品简介</label>
+              <div class="layui-input-block">
+                <input name="introduction" class="layui-input" type="text" autocomplete="off">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">价格</label>
+                <div class="layui-input-inline">
+                  <input name="price" class="layui-input" autocomplete="off" lay-verify="required">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label class="layui-form-label">菜品数目</label>
+                <div class="layui-input-inline">
+                  <input name="allowance" class="layui-input" autocomplete="off" lay-verify="number|required">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">发布日期</label>
+                <div class="layui-input-inline">
+                  <input name="startTime" class="layui-input" id="date1" type="text" placeholder="yyyy-MM-dd" autocomplete="off" lay-verify="date">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label class="layui-form-label">结束日期</label>
+                <div class="layui-input-inline">
+                  <input name="endTime" class="layui-input" id="date2" type="text" placeholder="yyyy-MM-dd" autocomplete="off" lay-verify="date">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <button class="layui-btn" lay-filter="demo1" lay-submit="">提交</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br><br>
+
+
+  <div id="con">
+    <br>
+
+    <div class='layui-card card' style='display:none'>
+      <div class='layui-card-header'>菜品名称
+        <button class='layui-btn layui-btn-sm' onclick='del(this)'>
+          <i class='layui-icon'>&#xe640;</i>
+        </button>
+      </div>
+      <div class='layui-card-body'>
+        定价：26.0元<br>
+        剩余销售量：200件<br>
+        2018.10.20-2020.10.20
+      </div>
+      <p style='display:none'>1235132431</p>
+    </div>
+
+
+
+  </div>
+
+</body>
+<script src="../layui/layui.all.js"></script>
+<script src="./js/release.js"></script>
+
+</html>
